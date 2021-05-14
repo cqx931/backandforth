@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <meta charset="UTF-8">
+		<title>LAOB 0 • Title</title>
+  </head>
+  <body>
+    <div id="byline">
+      <img id="laob" onclick="window.location.replace('/toc.html?a0')" src="/assets/laob_logo_inCircle.png" />
+        <span id="bytext">Title /
+        <span style="font: 1em HeadingsFontFamily, serif;">Qianxun Chen / Meredith Morran
+          <a href="https://observablehq.com/@backandforth/paptcha">NOTEBOOK</a>
+       </span></span>
+    </div>
+
+<div id="display" class="container"></div>
+
+<div id="observablehq-targetCell" class="none"></div>
+<div id="observablehq-init" class="none" style="display:none"></div>
+<div id="observablehq-customStyle" class="none"></div>
+<div id="observablehq-captchaGameStyle" class="none"></div>
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@backandforth/paptcha.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "targetCell") return new Inspector(document.querySelector("#observablehq-targetCell"));
+  if (name === "init") return new Inspector(document.querySelector("#observablehq-init"));
+  if (name === "customStyle") return new Inspector(document.querySelector("#observablehq-customStyle"));
+  if (name === "captchaGameStyle") return new Inspector(document.querySelector("#observablehq-captchaGameStyle"));
+});
+</script>
+
+  </body>
+</html>
